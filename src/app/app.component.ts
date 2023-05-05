@@ -12,7 +12,6 @@ export class AppComponent implements OnInit{
   coordinates!: string;
 
   public getLocation(): void {
-    const x = document.getElementById("cords");
 
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition(position => {
