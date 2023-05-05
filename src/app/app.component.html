@@ -1,4 +1,4 @@
-<div class="container">
+<!-- <div class="container">
   <div class="top-data">
     <img src="../assets/sunny.PNG" *ngIf="14 > 15">
     <img src="../assets/cold..PNG" *ngIf="14 <= 15">
@@ -57,5 +57,33 @@
     </div>
   </div>
   
+</div> -->
+
+
+
+
+<div>
+  <p>Click the button to get your coordinates.</p>
+
+  <button (click)="getLocation()">Try It</button>
+
+  <p id="cords">{{coordinates}}</p>
 </div>
+
+
+
+
+
+
+<!-- 
+<div>
+  <p>Click the button to get your coordinates.</p>
+
+  <button (click)="getLocation()">Try It</button>
+
+  <p id="cords">{{coordinates}}</p>
+
+  <p>{{weatherData}}</p>
+</div> -->
+
 <router-outlet></router-outlet>
