@@ -60,13 +60,10 @@
 </div> -->
 
 
-
 <h1>{{ title }}</h1>
 <p>{{ coordinates }}</p>
-<p>{{ weatherData.temperature }}°C</p>
-
-
-
+<p *ngIf="weatherData.temperature !== undefined">{{ weatherData.temperature }}°C</p>
+<p *ngIf="weatherData.temperature === undefined">Loading temperature...</p>
 
 <!-- 
 <div>
