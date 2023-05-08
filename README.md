@@ -1,5 +1,7 @@
 # Angular Weather Display
 
+Weather app that will display the current weather information for a user's location
+
 ## Features this project will have
 
 - **Find a user's location by utilizing GeolocationAPI**
