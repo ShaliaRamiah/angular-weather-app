@@ -60,10 +60,19 @@
 </div> -->
 
 
-<h1>{{ title }}</h1>
+<div>
+  <p>Click the button to get your coordinates.</p>
+
+  <button (click)="getLocation()">coordinates</button>
+
+  <p id="cords">{{coordinates}}</p>
+</div>
+
+
+<!-- <h1>{{ title }}</h1>
 <p>{{ coordinates }}</p>
 <p *ngIf="weatherData.temperature !== undefined">{{ weatherData.temperature }}°C</p>
-<p *ngIf="weatherData.temperature === undefined">Loading temperature...</p>
+<p *ngIf="weatherData.temperature === undefined">Loading temperature...</p> -->
 
 <!-- 
 <div>

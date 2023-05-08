@@ -10,39 +10,43 @@ import { Observable, map } from 'rxjs';
 })
 
 
-export class AppComponent implements OnInit {
+export class AppComponent implements OnInit{
   title = 'angular-weather-app';
 
+  //declaring a string property 
   coordinates!: string;
-  weatherData: any = {};
 
-  constructor(private http: HttpClient) {}
-
-  ngOnInit(): void {
-    this.getLocation();
-  }
-
-  getLocation(): void {
+  //getting user's location
+  public getLocation(): void {
+    //checking if the browser supports geolocation
     if (navigator.geolocation) {
+      //if it is supported, get users position
       navigator.geolocation.getCurrentPosition(position => {
         this.showPosition(position);
-        console.log(position);
       });
-    } else {
-      this.coordinates = 'Geolocation is not supported by this browser.';
+    } else { 
+      //if not, display error
+      this.coordinates = "Geolocation is not supported by this browser.";
     }
   }
 
+  //show users current position
   showPosition(position: GeolocationPosition): void {
+    //setting coordinates to users long and lat 
     this.coordinates = `Latitude: ${position.coords.latitude}, Longitude: ${position.coords.longitude}`;
-    this.getTemperature(position.coords.latitude, position.coords.longitude).subscribe(temp => {
-      this.weatherData.temperature = temp;
-      console.log(this.weatherData); 
-    });
+    this.getData(position.coords.latitude, position.coords.longitude).subscribe(res => {
+      console.log(res);
+    })
   }
 
-  getTemperature(latitude: number, longitude: number): Observable<any> {
-    const url = `https://api.open-meteo.com/v1/forecast?latitude=${latitude}&longitude=${longitude}&hourly=temperature_2m`;
-    return this.http.get<any>(url).pipe(map(res => res.hourly[0]?.temperature_2m));
+  constructor(private http: HttpClient) { }
+
+  ngOnInit(): void {
+  }
+
+  public getData(latitude: number, longitude: number): Observable<any[]> {
+    const url = `https://api.open-meteo.com/v1/forecast?latitude=${latitude}&longitude=${longitude}&hourly=temperature_2m`
+    return this.http.get<any[]>(url)
+      .pipe(map(res => res))
   }
 }
