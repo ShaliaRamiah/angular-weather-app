@@ -2,6 +2,16 @@ import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { Observable, map } from 'rxjs';
 
+interface WeatherData {
+  hourly: {
+    temperature_2m: {
+      datetime: string;
+      temperature: number;
+      latitude: number;
+      longitude: number;
+    }[];
+  };
+}
 
 @Component({
   selector: 'app-root',
@@ -15,6 +25,7 @@ export class AppComponent implements OnInit{
 
   //declaring a string property 
   coordinates!: string;
+  public temperature = 0;
 
   //getting user's location
   public getLocation(): void {
@@ -31,22 +42,25 @@ export class AppComponent implements OnInit{
   }
 
   //show users current position
+
+  //show users current position
   showPosition(position: GeolocationPosition): void {
-    //setting coordinates to users long and lat 
     this.coordinates = `Latitude: ${position.coords.latitude}, Longitude: ${position.coords.longitude}`;
-    this.getData(position.coords.latitude, position.coords.longitude).subscribe(res => {
-      console.log(res);
-    })
+    this.getData(position.coords.latitude, position.coords.longitude).subscribe(
+      (res: WeatherData) => {
+        console.log(res);
+        const temperatureData = ([...res.hourly.temperature_2m.slice(0, 1)]) 
+        console.log(res.hourly.temperature_2m.slice(0, 24))
+        this.temperature = temperatureData[0] as any;
+      });
   }
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {}
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
 
-  public getData(latitude: number, longitude: number): Observable<any[]> {
-    const url = `https://api.open-meteo.com/v1/forecast?latitude=${latitude}&longitude=${longitude}&hourly=temperature_2m`
-    return this.http.get<any[]>(url)
-      .pipe(map(res => res))
+  public getData(latitude: number, longitude: number): Observable<WeatherData> {
+    const url = `https://api.open-meteo.com/v1/forecast?latitude=${latitude}&longitude=${longitude}&hourly=temperature_2m`;
+    return this.http.get<WeatherData>(url).pipe(map(res => res));
   }
 }
