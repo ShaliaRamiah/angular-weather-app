@@ -4,8 +4,8 @@
     --yellow-1: #FAC742;
     --grey-1: #EDEDED;
     --white: #fff;
-    --shadow-dark: rgba(0,0,0,0.3);
-    --shadow-light: rgba(255,255,255,0.1);
+    --shadow-dark: rgba(0, 0, 0, 0.3);
+    --shadow-light: rgba(255, 255, 255, 0.1);
 }
 
 * {
@@ -30,7 +30,7 @@ body {
     height: 80vh;
     background-color: var(--darkblue-2);
     border-radius: 20px;
-    box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+    box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
 }
 
 .top-data {
@@ -51,22 +51,23 @@ body {
 }
 
 .bottom-data {
-   position: relative;
-   overflow: hidden;
-   width: 100%; 
-   height: 50%;
-   border-bottom-left-radius: 20px;
-   border-bottom-right-radius: 20px;
-   padding: 1em;
-   display: flex;
-   flex-direction: column;
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    height: 50%;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    padding: 1em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .ib-label img {
     width: 2em;
 }
 
-.ib-label span{
+.ib-label span {
     color: white;
     font-size: 0.8em;
 }
@@ -98,7 +99,9 @@ body {
 
 .information {
     color: #fff;
+    align-items: center;
 }
+
 
 .miContainer {
     flex: 1;
@@ -110,6 +113,13 @@ body {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    height: 50%;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    padding: 1em;
 }
 
 .info-block {
@@ -134,7 +144,25 @@ body {
     color: white;
 }
 
+.coords {
+    color: #fff;
+    text-align: center;
+}
 
+.coordinates {
+    color: #fff;
+    align-items: center;
+}
 
-
-
+.small-btn {
+    position: absolute;
+    top: 1;
+    left: 50;
+    height: 5%;
+    width: 30%;
+    align-items: center;
+    background-color:#0a0a23;
+    color: #fff;
+    border:none;
+    border-radius:10px;
+}

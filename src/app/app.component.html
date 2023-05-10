@@ -1,17 +1,22 @@
-<!-- <div class="container">
+  <h1>Angular Weather App</h1>
+<div class="container">
   <div class="top-data">
-    <img src="../assets/sunny.PNG" *ngIf="14 > 15">
-    <img src="../assets/cold..PNG" *ngIf="14 <= 15">
+    <img src="../assets/sunny.PNG" *ngIf="temperature > 12">
+    <img src="../assets/cold..PNG" *ngIf="temperature <= 12">
 
     <div class="weather-data">
-      <div class="location">Cape Town</div>
-      <div class="temperature">{{ 14.40 | number: '1.0-0'}}°C</div>
+      <div class="location"></div>
+      <div class="temperature">{{temperature}}°C</div>
+      <div>
+      </div>
     </div>
   </div>
 
   <div class="bottom-data">
     <div class="information">
-      More information
+      More information:
+      <br>
+      <button class="small-btn" (click)="getLocation()">Temperature</button>
     </div>
     <div class="miContainer">
       <div class="info-block">
@@ -33,56 +38,19 @@
           20°C
         </div>
       </div>
-
-      <div class="info-block">
-        <div class="ib-label">
-          <img src="../assets/humidity.png">
-          <span>humidity</span>
-        </div>
-        <div class="ib-value">
-          77%
-        </div>
-      </div>
-
-      <div class="info-block">
-        <div class="ib-label">
-          <img src="../assets/windyy.png">
-          <span>wind</span>
-        </div>
-        <div class="ib-value">
-          11 km/h
-        </div>
-      </div>
+     
 
     </div>
+    <div class="coordinates">
+      <h3>Coordinates:</h3>
+    <p class="coords">{{coordinates}}</p>
+    </div>
+
   </div>
   
-</div> -->
-
-
-<div>
-  <p>Click the button to get your coordinates.</p>
-
-  <button (click)="getLocation()">coordinates</button>
-
-  <p id="cords">{{coordinates}}</p>
 </div>
 
 
-<!-- <h1>{{ title }}</h1>
-<p>{{ coordinates }}</p>
-<p *ngIf="weatherData.temperature !== undefined">{{ weatherData.temperature }}°C</p>
-<p *ngIf="weatherData.temperature === undefined">Loading temperature...</p> -->
 
-<!-- 
-<div>
-  <p>Click the button to get your coordinates.</p>
-
-  <button (click)="getLocation()">Try It</button>
-
-  <p id="cords">{{coordinates}}</p>
-
-  <p>{{weatherData}}</p>
-</div> -->
 
 <router-outlet></router-outlet>
