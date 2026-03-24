@@ -1,0 +1,55 @@
+<div class="container">
+  <div class="top-data">
+
+    <div class="top-bar">
+      <div class="pill">
+        <div class="dot"></div>
+        <span class="pill-text">Live</span>
+      </div>
+      <span class="weather-icon">
+  {{ temperature <= 18 ? '❄️' : '☀️' }}
+</span>    </div>
+
+    <div class="weather-data">
+      <div class="location">{{city}}</div>
+      <div class="temp-display">
+        <div class="temperature">{{temperature}}</div>
+        <div class="temp-deg">°C</div>
+      </div>
+      <div class="condition-row">
+        <div class="condition-badge">
+          <span class="condition-text">{{ temperature > 25 ? 'Sunny & Clear' : temperature > 12 ? 'Mild' : 'Cold' }}</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="bottom-data">
+    <div class="miContainer">
+      <div class="info-block">
+        <div class="ib-label">
+          <img src="../assets/cold_weather.png">
+          <span>Min</span>
+        </div>
+        <div class="ib-value">{{minTemp}}°C</div>
+      </div>
+
+      <div class="info-block">
+        <div class="ib-label">
+          <img src="../assets/hot_weather.png">
+          <span>Max</span>
+        </div>
+        <div class="ib-value">{{maxTemp}}°C</div>
+      </div>
+    </div>
+
+    <div class="coordinates">
+      <p class="coords">{{coordinates}}</p>
+    </div>
+
+    <button class="small-btn" (click)="getLocation()">Refresh Location</button>
+  </div>
+</div>
+
+<router-outlet></router-outlet>

@@ -1,0 +1,216 @@
+/* Weather App Component Styles */
+
+.container {
+  width: 320px;
+  background: #0e1128;
+  border-radius: 40px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.07);
+}
+
+.top-data {
+  position: relative;
+  padding: 2.5rem 1.75rem 2rem;
+  background: #0e1128;
+}
+
+.weather-icon {
+  font-size: 40px;
+}
+
+.weather-data {
+  display: flex;
+  flex-direction: column;
+}
+
+.location {
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.4);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-weight: 500;
+  margin-bottom: 4px;
+}
+
+.temperature {
+  font-size: 88px;
+  font-weight: 200;
+  color: #ffffff;
+  line-height: 1;
+  letter-spacing: -4px;
+}
+
+.bottom-data {
+  padding: 0 1.75rem 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  border-top: 0.5px solid rgba(255, 255, 255, 0.06);
+  padding-top: 1.25rem;
+  margin-top: 1.5rem;
+}
+
+.miContainer {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-bottom: 0.5rem;
+}
+
+.info-block {
+  background: rgba(255, 255, 255, 0.03);
+  border: 0.5px solid rgba(255, 255, 255, 0.07);
+  border-radius: 16px;
+  padding: 0.85rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+}
+
+.ib-label {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+
+.ib-label img {
+  width: 22px;
+  height: 22px;
+}
+
+.ib-label span {
+  font-size: 10px;
+  color: rgba(255, 255, 255, 0.3);
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+.ib-value {
+  font-size: 16px;
+  font-weight: 500;
+  color: #ffffff;
+}
+
+.coordinates {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 14px;
+  background: rgba(255, 255, 255, 0.02);
+  border: 0.5px solid rgba(255, 255, 255, 0.06);
+  border-radius: 14px;
+}
+
+.coordinates::before {
+  content: '';
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #4ade80;
+  flex-shrink: 0;
+}
+
+.coords {
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.25);
+}
+
+.small-btn {
+  width: 100%;
+  padding: 1rem;
+  border-radius: 18px;
+  border: none;
+  background: #3C429E;
+  color: #ffffff;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  letter-spacing: 0.5px;
+  transition: all 0.2s ease;
+}
+
+.small-btn:hover {
+  background: #4C52AD;
+  transform: translateY(-1px);
+}
+
+.small-btn:active {
+  transform: translateY(0);
+}
+
+.top-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.pill {
+  background: rgba(255, 255, 255, 0.06);
+  border: 0.5px solid rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  padding: 6px 12px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #4ade80;
+}
+
+.pill-text {
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.5);
+  letter-spacing: 0.5px;
+}
+
+.refresh-icon {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.06);
+  border: 0.5px solid rgba(255, 255, 255, 0.1);
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 14px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.temp-display {
+  display: flex;
+  align-items: flex-start;
+  gap: 0;
+}
+
+.temp-deg {
+  font-size: 28px;
+  color: rgba(255, 255, 255, 0.4);
+  margin-top: 12px;
+  font-weight: 300;
+}
+
+.condition-row {
+  margin-top: 0.5rem;
+}
+
+.condition-badge {
+  background: rgba(250, 199, 117, 0.12);
+  border: 0.5px solid rgba(250, 199, 117, 0.2);
+  border-radius: 20px;
+  padding: 4px 12px;
+  display: inline-block;
+}
+
+.condition-text {
+  font-size: 12px;
+  color: #FAC775;
+  font-weight: 500;
+}
