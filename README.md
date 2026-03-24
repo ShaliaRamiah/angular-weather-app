@@ -27,3 +27,7 @@ ng serve
 
 [Open-Meteo](https://open-meteo.com/ 'Open-Meteo') (Weather Data API)
 
+
+<img width="1917" height="866" alt="weather" src="https://github.com/user-attachments/assets/c82e6807-8626-41e7-976b-422ea79be162" />
+
+
